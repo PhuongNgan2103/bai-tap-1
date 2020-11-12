@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>student score</legend>
+        <input id="ly" type="number" placeholder="diemly">
+        <input id="hoa" type="number" placeholder="diemhoa">
+        <input id="sinh" type="number" placeholder="diemsinh">
+        <button type="button" onclick="tinhtong()">tong</button>
+        <button type="button" onclick="diemtb()">diemtb</button>
+    </fieldset>
+</form>
+<p>Tổng điểm 3 môn là:<span id="tong"></span></p>
+<p>Điểm TB là:<span id="tb"></span></p>
+<script>
+    let diemLy = document.getElementById('ly');
+    let diemHoa = document.getElementById('hoa');
+    let diemSinh = document.getElementById('sinh');
+    let tong = 0;
+    let tb = 0;
+
+    function tinhtong() {
+        tong = parseFloat(diemLy.value) + parseFloat(diemHoa.value) + parseFloat(diemSinh.value);
+        hienthikq();
+    }
+    function diemtb(){
+        tb = tong/3;
+        hienthikq();
+    }
+    function hienthikq() {
+        document.getElementById('tong').innerText =tong
+        document.getElementById('tb').innerText=tb.toFixed(2);
+    }
+</script>
+
+</body>
+</html>
